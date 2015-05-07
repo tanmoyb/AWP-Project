@@ -1,0 +1,28 @@
+<div ng-controller="homeController">
+    <div class="register">
+        <span>
+            
+          
+        </span>
+                <button type="button" class="btn btn-primary pull-right" ng-click="show();">New Post</button>
+        <br/><br/>
+        <h2 style="text-align: center">Share Your Experience</h2>
+        <br/>
+        <div id="newQuestion" >
+            <ul class="list-group"><li class="list-group-item"><input type="text" class="form-control"  placeholder="Ask question???" ng-model="Question"><button type="button" class="btn btn primary pull-right" ng-click="postQ(Question);">Comment</button></li></ul>
+        </div>
+        <br/><br/>
+        <div class="register" ng-repeat="set in QAnswers" n-init="setIndex=$index">
+            <ul class="list-group" id='{{$index}}'>
+                <li class="list-group-item">{{set.Question}}</li>
+                <li class="list-group-item"><ul class="list-group" ng-repeat="answerA in set.Answers">
+                    
+                    <li class="list-group-item">{{answerA.Answer}}</li>
+                    </ul></li>
+                <li class="list-group-item"><input ng-model="answerText"  type="text" class="form-control" id="usr" placeholder="Your response"><button type="button" class="btn pull-right" ng-click="submitAnswer(answerText, set.Question, set.Answers); answerText=null;">Post</button>
+</li>
+                <br/>
+            </ul>
+        </div>
+    </div>
+</div>

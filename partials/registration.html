@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-0"></div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="register">
+            <h3>Sign Up</h3>
+                <form name="myForm" ng-submit="submit()">
+                    <label>Frist name</label>
+                    <br/>
+                    <input class="input-lg" type="text" name="fname" ng-model="fName" id ="firstname" required/>
+                    <span ng-show="myForm.fname.$dirty && myForm.fname.$error.required">Required!!!</span>
+                    <br/><br/>
+                     <label>Last name</label>
+                    <br/>
+                    <input class="input-lg" type="text" name="lname" ng-model="lName" id="lastname"  required/>
+                    <span ng-show="myForm.lname.$dirty && myForm.lname.$error.required">Required!!!</span>
+                    <br/><br/>
+                    <label>Email</label>
+                    <br/>
+                    <input class="input-lg" type="email" name="email" ng-model="email" id="email" required>
+                    <span ng-show="myForm.email.$dirty && myForm.email.$error.required">Required!!!</span>
+                    <span ng-show="myForm.email.$dirty && myForm.email.$error.email">Not an email</span>
+                    <br/><br/>
+                   <!-- <label>Password</label>
+                    <br/>
+                    <input 
+                           class="input-lg" 
+                           type="password" 
+                           name="pass" 
+                           ng-model="user.pass" 
+                           required
+                           ng-minlength="8"
+                           ng-maxlength="16">
+                    <span ng-show="frm.pass.$dirty && frm.pass.$error.required">Required!!!</span>
+                    <span ng-show="frm.pass.$dirty && frm.pass.$error.minlength">Too short</span>
+                    <span ng-show="frm.pass.$dirty && frm.pass.$error.maxlength">Too long</span>
+                    <br/><br/>
+                    <label>Retype password</label>
+                    <br/>
+                    <input 
+                           class="input-lg" 
+                           type="password" 
+                           name="repass" 
+                           match="user.pass" 
+                           required>
+                    <span ng-show="frm.repass.$dirty && frm.repass.$error.required">Required!!!</span>
+                    <div ng-show="frm.repass.$error.match">Password do not match!</div>
+                    <br/><br/> -->
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <label for="password">Password</label>
+                    <br/>
+       <input class="input-lg"  type="password" id="password" name="password" ng-model="password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+   <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+   <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+   <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+       <br /><br/>
+       
+       
+       <label for="password_c">Confirm Password</label>
+                    <br/>
+       <input class="input-lg" type="password"  name="password_c" ng-model="password_c" required  />
+   <span ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
+   <span ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span>
+       <br /><br/>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+             <button type="submit" class="btn" ng-disabled="!myForm.$valid" id="submit" >Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-0"></div>
+</div>
